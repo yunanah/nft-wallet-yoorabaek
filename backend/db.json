@@ -115,16 +115,34 @@
   ],
   "card": [
     {
-      "id": 1,
-      "name": "Intelligent Metal Mouse",
-      "price": "84.00",
-      "imageUrl": "http://placeimg.com/640/480/fashion"
+      "cardId": 0,
+      "owner": "Richard Satterfield",
+      "cardUri": "https://ipfs.io/ipfs/bafyreiaptip6rvsnusbtxjnsqf4rlzmodcip6mkbebrrdxumbddechnabm/metadata.json"
     },
     {
-      "id": 7,
-      "name": "Awesome Concrete Shirt",
-      "price": "165.00",
-      "imageUrl": "http://placeimg.com/640/480/fashion"
+      "cardId": 1,
+      "owner": "Alfredo Walsh II",
+      "cardUri": "https://ipfs.io/ipfs/bafyreienzcbw3vmaqba6jbwfpse3t4r4a7kzc6zbpvlregvp5aqtmxguqa/metadata.json"
+    },
+    {
+      "cardId": 2,
+      "owner": "Charlene Kub",
+      "cardUri": "https://ipfs.io/ipfs/bafyreiflld3ersvyaschfixl2x5w4iwig6lrxwbrnr43mshzzafz266aiq/metadata.json"
+    },
+    {
+      "cardId": 3,
+      "owner": "Eduardo Jacobi",
+      "cardUri": "https://ipfs.io/ipfs/bafyreieiywuacvdcb2nhllgk5cjaxptbjfun2zufykgdxknpdecavzitza/metadata.json"
+    },
+    {
+      "cardId": 4,
+      "owner": "Miriam Carter",
+      "cardUri": "https://ipfs.io/ipfs/bafyreia7nfngljptizl7fadi6nidqxqsvinnbyjql7j6mtov4njqqfwxdu/metadata.json"
+    },
+    {
+      "cardId": 5,
+      "owner": "Lindsay Bergnaum",
+      "cardUri": "https://ipfs.io/ipfs/bafyreieknw7hmcuvezydwdux73jkq2bjvyvp7osgp24duwwj2a5pbxx43a/metadata.json"
     }
   ]
 }

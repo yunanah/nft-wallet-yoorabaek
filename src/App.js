@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './App.css';
 import BannerContainer from './components/BannerContainer';
 import Footer from './components/Footer';

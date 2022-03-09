@@ -19,7 +19,11 @@ module.exports = function () {
     card: _.times(10, function (n) {
       return {
         cardId: n,
-        owner: faker.
+        owner: faker.name.findName(),
+        cardUri: `http://localhost:3000/${faker.random.number()}.json`,
+        name: faker.lorem.words(),
+        description: faker.lorem.sentence(),
+        image: faker.image.imageUrl(),
       };
     }),
   };

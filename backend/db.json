@@ -1,0 +1,130 @@
+{
+  "friend": [
+    {
+      "id": 0,
+      "name": "Julianne.Veum",
+      "imageUrl": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 1,
+      "name": "Reilly_Wyman68",
+      "imageUrl": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 2,
+      "name": "Berta_Williamson17",
+      "imageUrl": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 3,
+      "name": "Tremaine_Schulist",
+      "imageUrl": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 4,
+      "name": "Isaiah.Schmeler",
+      "imageUrl": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 5,
+      "name": "Derick_Durgan",
+      "imageUrl": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 6,
+      "name": "Pierce.Koch9",
+      "imageUrl": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 7,
+      "name": "Xavier86",
+      "imageUrl": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 8,
+      "name": "Dejuan.Abernathy68",
+      "imageUrl": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 9,
+      "name": "Tobin45",
+      "imageUrl": "http://placeimg.com/640/480/people"
+    }
+  ],
+  "token": [
+    {
+      "tokenId": 0,
+      "imageUrl": "http://placeimg.com/640/480/animals",
+      "balance": 4.654,
+      "unit": "KLAY"
+    },
+    {
+      "tokenId": 1,
+      "imageUrl": "http://placeimg.com/640/480/animals",
+      "balance": 2.2706,
+      "unit": "FINIX"
+    },
+    {
+      "tokenId": 2,
+      "imageUrl": "http://placeimg.com/640/480/animals",
+      "balance": 6.4661,
+      "unit": "BORA"
+    },
+    {
+      "tokenId": 3,
+      "imageUrl": "http://placeimg.com/640/480/animals",
+      "balance": 1.9413,
+      "unit": "MSC"
+    },
+    {
+      "tokenId": 4,
+      "imageUrl": "http://placeimg.com/640/480/animals",
+      "balance": 6.9681,
+      "unit": "BOX"
+    },
+    {
+      "tokenId": 5,
+      "imageUrl": "http://placeimg.com/640/480/animals",
+      "balance": 8.5448,
+      "unit": "SSX"
+    },
+    {
+      "tokenId": 6,
+      "imageUrl": "http://placeimg.com/640/480/animals",
+      "balance": 8.0597,
+      "unit": "ISR"
+    },
+    {
+      "tokenId": 7,
+      "imageUrl": "http://placeimg.com/640/480/animals",
+      "balance": 6.3983,
+      "unit": "MNR"
+    },
+    {
+      "tokenId": 8,
+      "imageUrl": "http://placeimg.com/640/480/animals",
+      "balance": 6.1814,
+      "unit": "META"
+    },
+    {
+      "tokenId": 9,
+      "imageUrl": "http://placeimg.com/640/480/animals",
+      "balance": 9.2989,
+      "unit": "FDM"
+    }
+  ],
+  "card": [
+    {
+      "id": 1,
+      "name": "Intelligent Metal Mouse",
+      "price": "84.00",
+      "imageUrl": "http://placeimg.com/640/480/fashion"
+    },
+    {
+      "id": 7,
+      "name": "Awesome Concrete Shirt",
+      "price": "165.00",
+      "imageUrl": "http://placeimg.com/640/480/fashion"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Symbol / klay_klip</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbol-/-klay_klip" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="BG" fill="#C4CED3" opacity="0" x="0" y="0" width="24" height="24"></rect>
+        <g id="KLAY" transform="translate(1.000000, 1.000000)" fill="#4F473E">
+            <path d="M10.7956784,11.4277174 L18.0112145,18.6743259 L10.9659007,21.5870194 L3.66255143,18.5608444 L10.7956784,11.4277174 Z M10.2950085,0.508359133 L2.99571213,18.1115114 C0.973308532,15.937799 0.07491281,13.1683085 0.0911244622,10.7122432 L0.0911244622,10.7122432 L10.2950085,0.508359133 Z M18.9255517,3.29770898 C20.7480116,5.2214917 21.8571588,7.94234731 21.8409471,10.7118379 C21.8247355,13.3124571 20.9749747,15.8752491 18.9539221,18.0921925 L18.9539221,18.0921925 L11.5249325,10.6969772 Z M11.5814031,0.0909090909 L18.0066212,2.75232198 L5.14672818,15.612215 L11.5814031,0.0909090909 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

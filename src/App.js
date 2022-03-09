@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import BannerContainer from './components/BannerContainer';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import MyInfoContainer from './components/MyInfoContainer';
+import MyTokenContainer from './components/MyTokenContainer';
+import RecentGetCardContainer from './components/RecentGetCardContainer';
+import RecentSendFriendsContainer from './components/RecentSendFriendsContainer';
+import ServiceContentsContainer from './components/ServiceContentsContainer';
+import SideToggleBar from './components/SideToggleBar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SideToggleBar />
+      <Header />
+      <MyInfoContainer />
+      <BannerContainer />
+      <MyTokenContainer />
+      <RecentGetCardContainer />
+      <RecentSendFriendsContainer />
+      <ServiceContentsContainer />
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,12 @@
+.uploadBtn {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  font-size: 24px;
+}
+
+.iconInBtn {
+  margin-right: 4px;
+  color: gold;
+  font-size: 20px;
+}

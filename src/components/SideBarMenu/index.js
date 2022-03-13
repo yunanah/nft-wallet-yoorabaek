@@ -10,6 +10,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
+// 사이드 토글 바 메뉴 컴포넌트
 function SideBarMenu() {
   return (
     <Menu>

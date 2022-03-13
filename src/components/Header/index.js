@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import logo from '../../assets/klip.svg';
 
+// 헤더 컴포넌트 - 앱의 (내비게이션) 버튼과 앱 로고가 있음
 function Header(props) {
   const { setToggleBar } = props;
 

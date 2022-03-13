@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import ContainerTitle from '../ContainerTitle';
 import MyTokenList from '../MyTokenList';
 
+// 내가 보유한 토큰 목록 컴포넌트를 감싸는 컨테이너 컴포넌트
 function MyTokenContainer() {
   return (
     <Container>

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import addChannelIcon from '../../assets/klipchannel.png';
 
+// 사이드 토글 바의 푸터 (하단) 컴포넌트
 function SideBarFooter() {
   return (
     <ToggleBarFooter>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import backImage from '../../assets/back-visual.gif';
 import useProfileData from '../../hooks/useProfileData';
 
+// 로그인한 유저의 정보가 담긴 상단 컴포넌트
 function MyInfoContainer() {
   const profile = useProfileData();
 

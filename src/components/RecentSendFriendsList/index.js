@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import useFriendData from '../../hooks/useFriendData';
 
+// 최근 전송한 친구 목록 컴포넌트 - useFriendData 훅과 연결됨
 function RecentSendFriendsList() {
   const friendList = useFriendData();
 

@@ -4,6 +4,7 @@ import { useRecoilState } from 'recoil';
 
 import tokenState from '../stores/tokens/atom';
 
+// 서버에 내가 보유한 토큰 목록을 get 요청하고 응답 받은 데이터를 전역 recoil state로 관리
 function useRecentToken() {
   const [tokens, setTokens] = useRecoilState(tokenState);
 

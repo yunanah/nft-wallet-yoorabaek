@@ -5,6 +5,7 @@ import banner_1 from '../../assets/main_bottom_list_hyundaicard07_1440x810.png';
 import banner_2 from '../../assets/main_carousel_klip_userguide_1440x810_revised.jpg';
 import Banner from '../Banner';
 
+// 광고 배너 묶음 컨테이너 컴포넌트
 function BannerContainer() {
   return (
     <BannerBox>

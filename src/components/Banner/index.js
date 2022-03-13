@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// 광고 배너 컴포넌트 - 이미지 파일 src를 props로 전달
 function Banner(props) {
   const { image } = props;
 

@@ -1,3 +1,4 @@
+// 카카오 로그인 버튼 눌렀을 때 로컬 서버의 /auth/kakao 라우터에 요청
 function KakaoLoginButton(props) {
   return (
     <div className="KakaoLoginButton">

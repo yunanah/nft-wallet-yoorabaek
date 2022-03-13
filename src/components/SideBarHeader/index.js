@@ -7,6 +7,7 @@ import styled from 'styled-components';
 
 import useProfileData from '../../hooks/useProfileData';
 
+// 사이드 토글 바의 헤더(상단) 컴포넌트 - useProfileData 훅과 연결됨 (유저가 로그인한 경우에 보임)
 function SideBarHeader() {
   const profile = useProfileData();
 

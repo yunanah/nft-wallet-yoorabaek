@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import backImage from '../../assets/back-visual.gif';
 import KakaoLoginButton from '../KakaoLoginButton';
 
+// 앱 메인 화면 로그인박스 컴포넌트 - 로그인 전에만 보임
 function LoginBox() {
   return (
     <MainLoginBox>

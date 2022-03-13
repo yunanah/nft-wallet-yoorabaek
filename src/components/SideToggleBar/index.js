@@ -9,6 +9,7 @@ import SideBarHeader from '../SideBarHeader';
 import SideBarLoginBox from '../SideBarLoginBox';
 import SideBarMenu from '../SideBarMenu';
 
+// 사이드 토글 바 컴포넌트 - 유저 데이터가 있는(로그인 한) 여부에 따라 로그인 박스 또는 헤더 컴포넌트가 보임
 function SideToggleBar(props) {
   const { toggleBar, setToggleBar } = props;
 

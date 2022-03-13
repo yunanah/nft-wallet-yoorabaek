@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import useRecentCardMeta from '../../hooks/useRecentCardMeta';
 
+// 최근 받은 카드 목록 컴포넌트 - useRecentCardMeta (최근 받은 카드 메타데이터) 훅과 연결
 function RecentGetCardList() {
   const cardData = useRecentCardMeta();
 

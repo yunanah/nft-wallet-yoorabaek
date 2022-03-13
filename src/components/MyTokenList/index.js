@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import useRecentToken from '../../hooks/useRecentToken';
 
+// 내가 보유한 토큰 목록 컴포넌트 useRecentToken 커스텀 훅을 통해 데이터 상태 관리
 function MyTokenList() {
   const tokens = useRecentToken();
 

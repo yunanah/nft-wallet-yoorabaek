@@ -2,6 +2,7 @@ import { faCircleDown } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
+// 푸터 컴포넌트
 function Footer() {
   return (
     <FooterContainer>

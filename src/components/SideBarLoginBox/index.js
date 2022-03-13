@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import KakaoLoginButton from '../KakaoLoginButton';
 
+// 사이드 토글 바의 로그인 박스 컴포넌트 (유저가 로그인 하지 않은 경우에 보임)
 function SideBarLoginBox() {
   return (
     <SmallLoginBox>

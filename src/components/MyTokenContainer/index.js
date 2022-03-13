@@ -1,7 +1,4 @@
-import {
-  faAngleRight,
-  faArrowRightFromBracket,
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 

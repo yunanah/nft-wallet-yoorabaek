@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import addChannelIcon from '../../assets/klipchannel.png';
+
 function SideBarFooter() {
   return (
     <ToggleBarFooter>

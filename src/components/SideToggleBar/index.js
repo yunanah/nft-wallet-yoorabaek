@@ -1,16 +1,18 @@
 import '../../styles/togglebar.css';
 
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import styled from 'styled-components';
 
-import getSessionStorageOrDefault from '../../services/getSessionStorageOrDefault';
+import useProfileData from '../../hooks/useProfileData';
 import SideBarFooter from '../SideBarFooter';
 import SideBarHeader from '../SideBarHeader';
 import SideBarLoginBox from '../SideBarLoginBox';
 import SideBarMenu from '../SideBarMenu';
 
 function SideToggleBar(props) {
-  const { toggleBar, setToggleBar, nickName } = props;
+  const { toggleBar, setToggleBar } = props;
+
+  const profile = useProfileData();
 
   const closeToggleBar = useCallback(() => {
     setToggleBar(false);
@@ -18,10 +20,10 @@ function SideToggleBar(props) {
   return (
     <>
       <ToggleBar toggleBar={toggleBar}>
-        {nickName === '' ? (
+        {profile.nickname === '' ? (
           <SideBarLoginBox />
         ) : (
-          <SideBarHeader nickName={nickName} />
+          <SideBarHeader nickName={profile.nickname} />
         )}
         <SideBarMenu />
         <SideBarFooter />

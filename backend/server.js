@@ -4,7 +4,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
-const qs = require('qs');
 const session = require('express-session');
 
 app.use(bodyParser.json());
@@ -23,7 +22,7 @@ app.use(
     secure: false,
     saveUninitialized: false,
   }),
-); //세션을 설정할 때 쿠키가 생성된다.&&req session의 값도 생성해준다. 어느 라우터든 req session값이 존재하게 된다.
+);
 
 const kakao = {
   clientId: '69ce1e18cec4ba5d0bad4acb24bc7092',
@@ -90,10 +89,15 @@ app.get('/auth/kakao', (req, res) => {
 let token;
 // 코드 post로 받아서 access 토큰 요청하는 형식으로 수정하기
 app.post('/auth/kakao/token', async (req, res) => {
-  // req.header('Access-Control-Allow-Origin', '*');
-  //axios>>promise object
   try {
     //access토큰을 받기 위한 코드
+    if (!req.body.authorizationCode) {
+      res.sendStatus(400).json({
+        status: 'error',
+        error: 'req body cannot be empty',
+      });
+      return;
+    }
     let authorization_code = req.body.authorizationCode;
     console.log(req.body.authorizationCode);
     await axios
@@ -109,40 +113,39 @@ app.post('/auth/kakao/token', async (req, res) => {
         console.log('data', result.data);
         // 토큰을 활용한 로직을 적어주면된다.
         token = result.data;
-        // res.json(result);
       });
   } catch (err) {
-    res.json(err.data);
+    console.log(err);
+    return;
   }
   //access토큰을 받아서 사용자 정보를 알기 위해 쓰는 코드
   console.log('token1', token);
-  res.json(token);
+  res.status(200).json(token);
 });
 
 let user;
 app.post('/auth/kakao/info', async (req, res) => {
   try {
     if (!req.body.accessToken) {
-      return res.status(400).json({
+      res.sendStatus(400).json({
         status: 'error',
         error: 'req body cannot be empty',
       });
+      return;
     }
     let access_token = req.body.accessToken;
-    console.log('access_token!', access_token);
     await axios
       .get('https://kapi.kakao.com/v2/user/me', {
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
       })
-      .then((res) => {
-        // console.log(res.data);
-        user = res.data;
+      .then((result) => {
+        user = result.data;
       });
   } catch (err) {
-    res.json(err.data);
+    console.log(err);
+    return;
   }
-  // console.log(user);
-  res.json(user);
+  res.status(200).json(user);
 });

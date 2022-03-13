@@ -5,22 +5,17 @@ import { faCoins, faExpand } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
-import getSessionStorageOrDefault from '../../services/getSessionStorageOrDefault';
+import useProfileData from '../../hooks/useProfileData';
 
-// import profile from '/Users/yoorabaek/Desktop/klip-frontend-interview-yoorabaek/src/assets/profileImg.JPG';
+function SideBarHeader() {
+  const profile = useProfileData();
 
-function SideBarHeader(props) {
-  const { nickName } = props;
-  const profile_image_url = getSessionStorageOrDefault(
-    'user_profile_image',
-    '',
-  );
   return (
     <ToggleBarHeader>
       <FontAwesomeIcon className="uploadBtn" icon={faExpand} />
       <UserProfile>
-        <ProfileImage src={profile_image_url} alt="" />
-        <h3 style={{ margin: '8px' }}>{nickName}</h3>
+        <ProfileImage src={profile.profile_image_url} alt="프로필 이미지" />
+        <h3 style={{ margin: '8px' }}>{profile.nickname}</h3>
       </UserProfile>
       <AddressButton>내 주소 보기</AddressButton>
       <WalletBox>

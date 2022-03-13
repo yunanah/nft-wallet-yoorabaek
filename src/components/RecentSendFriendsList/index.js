@@ -1,23 +1,11 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+import useFriendData from '../../hooks/useFriendData';
+
 function RecentSendFriendsList() {
-  const [friendList, setFriendList] = useState([]);
-  useEffect(() => {
-    axios
-      .get('http://localhost:8080/friend')
-      .then((res) => {
-        if (res)
-          setFriendList(
-            res.data.map((item) => ({
-              ...item,
-              imageUrl: `${item.imageUrl}?random=${Math.random()}`,
-            })),
-          );
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  const friendList = useFriendData();
+
+  if (!friendList) return null;
 
   return (
     <FriendsList>

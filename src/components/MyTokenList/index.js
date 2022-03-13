@@ -1,24 +1,11 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-function MyTokenList() {
-  const [tokens, setTokens] = useState([]);
+import useRecentToken from '../../hooks/useRecentToken';
 
-  useEffect(() => {
-    axios
-      .get('http://localhost:8080/wallet/token')
-      .then((res) => {
-        if (res)
-          setTokens(
-            res.data.map((item) => ({
-              ...item,
-              imageUrl: `${item.imageUrl}?random=${Math.random()}`,
-            })),
-          );
-      })
-      .catch((err) => console.log(err));
-  }, []);
+function MyTokenList() {
+  const tokens = useRecentToken();
+
+  if (!tokens) return null;
 
   return (
     <TokenList>

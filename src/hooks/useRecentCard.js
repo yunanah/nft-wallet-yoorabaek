@@ -9,7 +9,6 @@ function useRecentCard() {
 
   useEffect(() => {
     axios.get('http://localhost:8080/wallet/card').then((res) => {
-      // console.log(res);
       setCardData(res.data);
     });
   }, [setCardData]);

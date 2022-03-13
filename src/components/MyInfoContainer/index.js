@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
 import backImage from '../../assets/back-visual.gif';
+import useProfileData from '../../hooks/useProfileData';
 
-function MyInfoContainer(props) {
-  const { nickName } = props;
+function MyInfoContainer() {
+  const profile = useProfileData();
+
+  if (profile.nickname === '') return null;
 
   return (
     <UserInfoContainer>
       <LeftContents>
         <h1>
-          {nickName}님,
+          {profile.nickname}님,
           <br />
           안녕하세요.
         </h1>

@@ -1,5 +1,3 @@
-import kakaoLogin from '../../services/kakaoLogin';
-
 function KakaoLoginButton(props) {
   return (
     <div className="KakaoLoginButton">

@@ -7,8 +7,7 @@ import profileState from '../stores/profile/atom';
 
 function useProfileData() {
   const [profile, setProfile] = useRecoilState(profileState);
-  const [loggedIn, setLoggedIn] = useRecoilState(loginState);
-  console.log(profile, profile.nickname ? profile.nickname.length : 0);
+  const [isLogginIn, setIsLogginIn] = useRecoilState(loginState);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -23,8 +22,7 @@ function useProfileData() {
             let refreshToken = res.data.refresh_token;
             localStorage.setItem('CC_Token', accessToken);
             localStorage.setItem('RF_Token', refreshToken);
-            // console.log(res);
-            setLoggedIn(true);
+            setIsLogginIn(true);
           }
         });
     };
@@ -33,7 +31,7 @@ function useProfileData() {
     if (authorizationCode) {
       await getAccessToken(authorizationCode);
     }
-  }, [setLoggedIn, loggedIn]);
+  }, [setIsLogginIn, isLogginIn]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
@@ -49,18 +47,14 @@ function useProfileData() {
               nickname: res.data.properties.nickname,
               profile_image_url: res.data.properties.profile_image,
             });
-            setLoggedIn(false);
+            setIsLogginIn(false);
           }
         });
     };
-    console.log(
-      Boolean(localStorage.getItem('CC_Token')),
-      localStorage.getItem('CC_Token'),
-    );
     if (Boolean(localStorage.getItem('CC_Token'))) {
       await getUserData(localStorage.getItem('CC_Token'));
     }
-  }, [loggedIn, setProfile]);
+  }, [isLogginIn, setProfile]);
 
   return profile;
 }

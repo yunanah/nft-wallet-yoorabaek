@@ -5,15 +5,18 @@ import styled from 'styled-components';
 function RecentSendFriendsList() {
   const [friendList, setFriendList] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:3000/friend').then((res) => {
-      if (res)
-        setFriendList(
-          res.data.map((item) => ({
-            ...item,
-            imageUrl: `${item.imageUrl}?random=${Math.random()}`,
-          })),
-        );
-    });
+    axios
+      .get('http://localhost:3000/friend')
+      .then((res) => {
+        if (res)
+          setFriendList(
+            res.data.map((item) => ({
+              ...item,
+              imageUrl: `${item.imageUrl}?random=${Math.random()}`,
+            })),
+          );
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   return (

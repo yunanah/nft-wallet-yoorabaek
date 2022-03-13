@@ -1,25 +1,35 @@
 import '../../styles/togglebar.css';
 
+import { useCallback, useState } from 'react';
 import styled from 'styled-components';
 
+import getSessionStorageOrDefault from '../../services/getSessionStorageOrDefault';
 import SideBarFooter from '../SideBarFooter';
 import SideBarHeader from '../SideBarHeader';
+import SideBarLoginBox from '../SideBarLoginBox';
 import SideBarMenu from '../SideBarMenu';
 
 function SideToggleBar(props) {
   const { toggleBar, setToggleBar } = props;
-  console.log(toggleBar);
+  const [nickName, setNickName] = useState(
+    getSessionStorageOrDefault('user_nickname', ''),
+  );
+
+  const closeToggleBar = useCallback(() => {
+    setToggleBar(false);
+  }, []);
   return (
     <>
       <ToggleBar toggleBar={toggleBar}>
-        <SideBarHeader />
+        {nickName === '' ? (
+          <SideBarLoginBox />
+        ) : (
+          <SideBarHeader nickName={nickName} />
+        )}
         <SideBarMenu />
         <SideBarFooter />
       </ToggleBar>
-      <Overlay
-        toggleBar={toggleBar}
-        onClick={() => setToggleBar(false)}
-      ></Overlay>
+      <Overlay toggleBar={toggleBar} onClick={closeToggleBar}></Overlay>
     </>
   );
 }

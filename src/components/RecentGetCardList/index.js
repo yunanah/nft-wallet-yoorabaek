@@ -1,53 +1,28 @@
-import axios from 'axios';
-import lodash from 'lodash';
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+import useRecentCardMeta from '../../hooks/useRecentCardMeta';
+
 function RecentGetCardList() {
-  const [data, setData] = useState([]);
-  const [cardData, setCardData] = useState([]);
-  let tempData = [];
+  const cardData = useRecentCardMeta();
 
-  useEffect(() => {
-    axios
-      .get('http://localhost:3000/wallet/card')
-      .then((res) => {
-        if (res) {
-          setData(res.data);
-        }
-      })
-      .catch((err) => console.log(err));
-
-    data.forEach(async (item) => {
-      await axios
-        .get(item.cardUri)
-        .then((res) => {
-          if (res) {
-            tempData.push(lodash.cloneDeep(res.data));
-          }
-        })
-        .catch((err) => console.log(err));
-    });
-
-    setCardData(tempData);
-  }, []);
+  if (!cardData) {
+    return null;
+  }
 
   return (
     <CardList>
-      {!!cardData.length &&
-        cardData.map((item, index) => {
-          return (
-            <CardItem>
-              <CardImage
-                key={item.cardId}
-                style={{ width: '104px', height: '104px' }}
-                src={'https://ipfs.io/ipfs' + item.image.substring(6)}
-                alt=""
-              />
-              <CardName>{item.name}</CardName>
-            </CardItem>
-          );
-        })}
+      {cardData.map((item, index) => {
+        return (
+          <CardItem key={index}>
+            <CardImage
+              style={{ width: '104px', height: '104px' }}
+              src={'https://ipfs.io/ipfs' + item.image.substring(6)}
+              alt=""
+            />
+            <CardName>{item.name}</CardName>
+          </CardItem>
+        );
+      })}
     </CardList>
   );
 }

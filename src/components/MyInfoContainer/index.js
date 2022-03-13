@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 import backImage from '../../assets/back-visual.gif';
 
-function MyInfoContainer() {
+function MyInfoContainer(props) {
+  const { nickName } = props;
+
   return (
     <UserInfoContainer>
       <LeftContents>
         <h1>
-          백유라님,
+          {nickName}님,
           <br />
           안녕하세요.
         </h1>

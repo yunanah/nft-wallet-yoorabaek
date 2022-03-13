@@ -6,7 +6,7 @@ function RecentSendFriendsList() {
   const [friendList, setFriendList] = useState([]);
   useEffect(() => {
     axios
-      .get('http://localhost:3000/friend')
+      .get('http://localhost:8080/friend')
       .then((res) => {
         if (res)
           setFriendList(

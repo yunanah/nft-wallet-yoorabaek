@@ -25,7 +25,7 @@ function App() {
     <RecoilRoot>
       <Body>
         <Header setToggleBar={setToggleBar} />
-        {nickName === '' ? (
+        {nickName !== '' ? (
           <LoginBox />
         ) : (
           <>

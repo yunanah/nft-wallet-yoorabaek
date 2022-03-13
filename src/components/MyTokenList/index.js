@@ -7,7 +7,7 @@ function MyTokenList() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/wallet/token')
+      .get('http://localhost:8080/wallet/token')
       .then((res) => {
         if (res)
           setTokens(

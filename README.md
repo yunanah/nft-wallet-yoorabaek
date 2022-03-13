@@ -36,4 +36,6 @@ nodemon server.js
 └── nftstorage (card metadata json 생성)
 ```
 
-### 추가 요구 사항 - 카카오 소셜 로그인 구현
+### 추가 구현 사항
+
+- 카카오 소셜 로그인

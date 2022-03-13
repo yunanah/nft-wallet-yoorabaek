@@ -19,7 +19,7 @@ cd backend/
 ```
 
 ```
-nodemon server.js
+npm run start
 ```
 
 ## 디렉터리 구조

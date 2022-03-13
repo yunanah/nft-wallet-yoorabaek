@@ -67,7 +67,7 @@ const MenuItem = styled.a`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 28px;
+  padding: 14px 28px;
   text-decoration: none;
   color: rgb(192, 202, 212);
 `;

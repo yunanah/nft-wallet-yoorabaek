@@ -21,3 +21,19 @@ cd backend/
 ```
 nodemon server.js
 ```
+
+## 디렉터리 구조
+
+```bash
+├── src (client, port:5500)
+│   ├── components
+│   ├── hooks
+│   ├── stores (Recoil)
+│   ├── styles
+│   └── assets
+├── backend
+│   └── server.js (Node.js + mongoDB, port:8080)
+└── nftstorage (card metadata json 생성)
+```
+
+### 추가 요구 사항 - 카카오 소셜 로그인 구현

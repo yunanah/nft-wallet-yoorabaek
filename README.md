@@ -25,14 +25,13 @@ nodemon server.js
 ## 디렉터리 구조
 
 ```bash
-├── src (client, port:5500)
+├── src (client - React.js, port:5500)
 │   ├── components
 │   ├── hooks
 │   ├── stores (Recoil)
 │   ├── styles
 │   └── assets
-├── backend
-│   └── server.js (Node.js + mongoDB, port:8080)
+├── backend (server - Node.js + mongoDB, port:8080)
 └── nftstorage (card metadata json 생성)
 ```
 

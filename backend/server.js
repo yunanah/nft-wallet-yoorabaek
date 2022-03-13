@@ -1,8 +1,35 @@
 const express = require('express');
-const path = require('path');
 const app = express();
 
-const http = require('http').createServer(app);
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const axios = require('axios');
+const qs = require('qs');
+const session = require('express-session');
+
+app.use(bodyParser.json());
+
+app.use(
+  cors({
+    origin: ['http://localhost:5500'],
+    credentials: true,
+  }),
+);
+
+app.use(
+  session({
+    secret: 'ras',
+    resave: true,
+    secure: false,
+    saveUninitialized: false,
+  }),
+); //세션을 설정할 때 쿠키가 생성된다.&&req session의 값도 생성해준다. 어느 라우터든 req session값이 존재하게 된다.
+
+const kakao = {
+  clientId: '69ce1e18cec4ba5d0bad4acb24bc7092',
+  clientSecret: 'RF1iNFE7kwwl0kvavDe5jzjbdFVgMU4f',
+  redirectUri: 'http://localhost:5500/auth/kakao/callback',
+};
 
 let db;
 
@@ -53,4 +80,69 @@ app.get('/wallet/card', function (req, res) {
 
       res.status(200).json(result);
     });
+});
+
+app.get('/auth/kakao', (req, res) => {
+  const kakaoAuthURL = `https://kauth.kakao.com/oauth/authorize?client_id=${kakao.clientId}&redirect_uri=${kakao.redirectUri}&response_type=code&scope=profile_nickname,profile_image,account_email,gender`;
+  res.redirect(kakaoAuthURL);
+});
+
+let token;
+// 코드 post로 받아서 access 토큰 요청하는 형식으로 수정하기
+app.post('/auth/kakao/token', async (req, res) => {
+  // req.header('Access-Control-Allow-Origin', '*');
+  //axios>>promise object
+  try {
+    //access토큰을 받기 위한 코드
+    let authorization_code = req.body.authorizationCode;
+    console.log(req.body.authorizationCode);
+    await axios
+      .post(
+        `https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id=${kakao.clientId}&redirect_uri=${kakao.redirectUri}&code=${authorization_code}`,
+        {
+          headers: {
+            'Content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+          },
+        },
+      )
+      .then((result) => {
+        console.log('data', result.data);
+        // 토큰을 활용한 로직을 적어주면된다.
+        token = result.data;
+        // res.json(result);
+      });
+  } catch (err) {
+    res.json(err.data);
+  }
+  //access토큰을 받아서 사용자 정보를 알기 위해 쓰는 코드
+  console.log('token1', token);
+  res.json(token);
+});
+
+let user;
+app.post('/auth/kakao/info', async (req, res) => {
+  try {
+    if (!req.body.accessToken) {
+      return res.status(400).json({
+        status: 'error',
+        error: 'req body cannot be empty',
+      });
+    }
+    let access_token = req.body.accessToken;
+    console.log('access_token!', access_token);
+    await axios
+      .get('https://kapi.kakao.com/v2/user/me', {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
+      })
+      .then((res) => {
+        // console.log(res.data);
+        user = res.data;
+      });
+  } catch (err) {
+    res.json(err.data);
+  }
+  // console.log(user);
+  res.json(user);
 });

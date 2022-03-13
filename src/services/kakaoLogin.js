@@ -2,6 +2,7 @@ const kakaoLogin = () => {
   console.log('kakao login here');
   window.Kakao.Auth.login({
     scope: 'profile_nickname, profile_image, account_email, gender',
+
     success: function (authObj) {
       console.log('hi');
       console.log(authObj);

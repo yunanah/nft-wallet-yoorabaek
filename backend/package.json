@@ -10,9 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.1",
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
     "express": "^4.17.3",
+    "express-session": "^1.17.2",
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.6",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "qs": "^6.10.3",
+    "session": "^0.1.0"
   }
 }

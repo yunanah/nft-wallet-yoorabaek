@@ -10,10 +10,7 @@ import SideBarLoginBox from '../SideBarLoginBox';
 import SideBarMenu from '../SideBarMenu';
 
 function SideToggleBar(props) {
-  const { toggleBar, setToggleBar } = props;
-  const [nickName, setNickName] = useState(
-    getSessionStorageOrDefault('user_nickname', ''),
-  );
+  const { toggleBar, setToggleBar, nickName } = props;
 
   const closeToggleBar = useCallback(() => {
     setToggleBar(false);
